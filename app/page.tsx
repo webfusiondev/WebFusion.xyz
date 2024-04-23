@@ -1,113 +1,139 @@
-import Image from "next/image";
+import Logo from "./logo";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+    <>
+      <main className="min-h-screen flex flex-col relative">
+        <nav className="px-24 py-6 flex items-center h-32 justify-between select-none text-xl border-b border-b-secondary">
+          <Logo />
+          <div className="flex items-center justify-center gap-4">
+            <div className="cursor-pointer">Our Events</div>
+            &bull;
+            <div className="cursor-pointer text-brand-green font-bold">
+              Home
+            </div>
+            &bull;
+            <div className="cursor-pointer">Courses &amp; Resources</div>
+          </div>
+          <span className="invisible">
+            <Logo />
+          </span>
+        </nav>
+        <section className="py-44 px-24 flex flex-col justify-center grow">
+          <div className="text-6xl font-medium mb-5 pl-8">
+            Welcome to{" "}
+            <span className="bg-brand-green text-brand-black px-4">
+              Webfusion
+            </span>
+          </div>
+          <p className="text-3xl mb-20 max-w-5xl pl-8">
+            At Webfusion, we are dedicated to{" "}
+            <span className="text-brand-green">empowering</span>{" "}
+            <span className="text-brand-green">developers</span>
+            <span className="inline">
+              {" "}
+              and advancing technology through community-driven initiatives,
+              educational programs, and collaborative partnership{" "}
+            </span>
+            <span
+              style={{ width: "32.36%" }}
+              className="border border-brand-white inline-block align-middle"
             />
-          </a>
+          </p>
+          {/* right aligned section */}
+          <div className="text-right font-bold text-2xl text-brand-green">
+            Our Mission
+          </div>
+          <p
+            style={{ alignSelf: "flex-end" }}
+            className="max-w-xl text-right text-xl"
+          >
+            To foster innovation, inclusivity, and skill development in the
+            rapidly evolving landscape of{" "}
+            <span className="font-bold">Web2 and Web3 technologies</span>
+          </p>
+        </section>
+      </main>
+      <section
+        className="py-24 overflow-hidden"
+        style={{ backgroundColor: "rgba(150, 150, 150, 0.05)" }}
+      >
+        <div className="px-24 pb-16 text-2xl">
+          <div className="font-medium text-6xl mb-9">Our Events</div>
+          <p className="mb-4">
+            Discover and participate in a diverse range of events organized or
+            sponsored by Webfusion. From hackathons and bootcamps to workshops
+            and webinars, we offer opportunities for developers to learn,
+            connect, and showcase their talents.
+          </p>
+          <div>
+            Join us at{" "}
+            <span className="font-bold text-brand-green cursor-pointer">
+              upcoming events
+            </span>{" "}
+            or explore highlights from past gatherings.
+          </div>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div
+          style={{ marginLeft: "-1px", marginRight: "-1px" }}
+          className="grid grid-cols-6 events-grid"
         >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+          <div className="col-span-2 border border-secondary p-24">
+            <div className="font-bold text-3xl mb-6">Hackathons</div>
+            <p className="text-xl mb-8">
+              Engage in intensive coding challenges, collaborate with peers, and
+              bring your cre-ative ideas to life within a supportive
+              environment.
+            </p>
+            <span className="text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+              Read More
             </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+          </div>
+          <div className="col-span-2 border border-secondary border-l p-24">
+            <div className="font-bold text-3xl mb-6">Bootcamps</div>
+            <p className="text-xl mb-8">
+              Dive deep into specific topics or technologies through immersive
+              learning experiences led by industry experts.
+            </p>
+            <span className="text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+              Read More
             </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+          </div>
+          <div className="col-span-2 border border-secondary border-l p-24">
+            <div className="font-bold text-3xl mb-6">Workshops</div>
+            <p className="text-xl mb-8">
+              Enhance your skills and know-ledge through hands-on sessions
+              covering a wide array of subjects relevant to modern development
+              practices.
+            </p>
+            <span className="text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+              Read More
             </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+          </div>
+          <div className="col-span-3 border border-b p-24">
+            <div className="font-bold text-3xl mb-6">Webinars</div>
+            <p className="text-xl mb-8">
+              Stay informed and inspired by attending virtual sessions featuring
+              thought leaders, innovators, and pioneers in the tech industry.
+            </p>
+            <span className="text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+              Read More
             </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          </div>
+          <div className="col-span-3 border border-l border-b  p-24">
+            <div className="font-bold text-3xl mb-6">
+              In-Person (IRL) Events
+            </div>
+            <p className="text-xl mb-8">
+              Connect with fellow developers face-to-face at our live events,
+              where networking opportunities abound and camaraderie thrives.
+            </p>
+            <span className="text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+              Read More
+            </span>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

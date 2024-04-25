@@ -19,3 +19,23 @@ export const ki = localFont({
     },
   ],
 });
+
+export const widolte = localFont({
+  src: [
+    {
+      path: "../public/fonts/widolte/WidolteLight.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/widolte/WidolteRegular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/widolte/WidolteBold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+});

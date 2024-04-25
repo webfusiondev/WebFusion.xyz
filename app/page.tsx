@@ -1,10 +1,12 @@
+import Image from "next/image";
+
 import IconPark from "./icon-park";
 import Logo from "./logo";
 
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen flex flex-col relative">
+      <main className="min-h-screen flex flex-col relative overflow-x-clip">
         <nav className="px-24 py-6 flex items-center h-32 justify-between select-none text-xl border-b border-b-secondary">
           <Logo />
           <div className="flex items-center justify-center gap-4">
@@ -34,7 +36,7 @@ export default function Home() {
             <span className="inline">
               {" "}
               and advancing technology through community-driven initiatives,
-              educational programs, and collaborative partnerships{" "}
+              educational programs, and collaborative partnerships{"  "}
             </span>
             <span
               style={{ width: "32.36%" }}
@@ -98,6 +100,21 @@ export default function Home() {
             />
           </path>
         </svg>
+
+        <Image
+          alt="webfusion stripe"
+          width={396}
+          height={206}
+          style={{ left: "-132px", bottom: "-65px", position: "absolute" }}
+          src="/pattern-stripe.png"
+        />
+        <Image
+          alt="webfusion stripe"
+          width={396}
+          height={206}
+          style={{ bottom: "-65px", right: "-132px", position: "absolute" }}
+          src="/pattern-stripe.png"
+        />
       </main>
       <section
         className="py-24 overflow-hidden"
@@ -107,16 +124,16 @@ export default function Home() {
           <div className="font-medium text-6xl mb-9">Events</div>
           <p className="mb-4">
             Discover and participate in a diverse range of events organized or
-            sponsored by WebFusion. From hackathons and bootcamps to workshops
-            and webinars, we offer opportunities for developers to learn,
-            connect, and showcase their talents.
+            sponsored by WebFusion&#8228; From hackathons and bootcamps to
+            workshops and webinars, we offer opportunities for developers to
+            learn, connect, and showcase their talents&#8228;
           </p>
           <div>
             Join us at{" "}
             <span className="font-bold text-brand-green cursor-pointer">
               upcoming events
             </span>{" "}
-            or explore highlights from past gatherings.
+            or explore highlights from past gatherings&#8228;
           </div>
         </div>
         <div
@@ -127,7 +144,8 @@ export default function Home() {
             <div className="font-bold text-3xl mb-6">Hackathons</div>
             <p className="text-xl mb-8">
               Engage in intensive coding challenges, collaborate with peers, and
-              bring your creative ideas to life within a supportive environment.
+              bring your creative ideas to life within a supportive
+              environment&#8228;
             </p>
             <span className="text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
               Read More
@@ -137,7 +155,7 @@ export default function Home() {
             <div className="font-bold text-3xl mb-6">Bootcamps</div>
             <p className="text-xl mb-8">
               Dive deep into specific topics or technologies through immersive
-              learning experiences led by industry experts.
+              learning experiences led by industry experts&#8228;
             </p>
             <span className="text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
               Read More
@@ -148,7 +166,7 @@ export default function Home() {
             <p className="text-xl mb-8">
               Enhance your skills and knowledge through hands-on sessions
               covering a wide array of subjects relevant to modern development
-              practices.
+              practices&#8228;
             </p>
             <span className="text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
               Read More
@@ -158,7 +176,8 @@ export default function Home() {
             <div className="font-bold text-3xl mb-6">Webinars</div>
             <p className="text-xl mb-8">
               Stay informed and inspired by attending virtual sessions featuring
-              thought leaders, innovators, and pioneers in the tech industry.
+              thought leaders, innovators, and pioneers in the tech
+              industry&#8228;
             </p>
             <span className="text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
               Read More
@@ -170,7 +189,8 @@ export default function Home() {
             </div>
             <p className="text-xl mb-8">
               Connect with fellow developers face-to-face at our live events,
-              where networking opportunities abound and camaraderie thrives.
+              where networking opportunities abound and camaraderie
+              thrives&#8228;
             </p>
             <span className="text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
               Read More
@@ -190,12 +210,12 @@ export default function Home() {
             <p className="mb-4">
               Elevate your expertise with our comprehensive courses and curated
               resources designed to empower developers at every stage of their
-              journey.
+              journey&#8228;
             </p>
             <p>
-              Whether you&apos;re delving into blockchain technology or honing your
-              skills in Web2 development, we provide the tools and guidance you
-              need to succeed.
+              Whether you&apos;re delving into blockchain technology or honing
+              your skills in Web2 development, we provide the tools and guidance
+              you need to succeed&#8228;
             </p>
           </div>
         </div>
@@ -205,30 +225,36 @@ export default function Home() {
             className="grid grid-cols-3"
           >
             <div className="border border-secondary px-14 py-16">
-              <div className="mb-4"><IconPark /></div>
+              <div className="mb-4">
+                <IconPark />
+              </div>
               <div className="text-3xl mb-4 font-bold">Developer Courses</div>
               <p className="text-xl">
                 Expand your knowledge and proficiency in Web2 development
                 languages, frameworks, and best practices with our targeted
-                curriculum.
+                curriculum&#8228;
               </p>
             </div>
             <div className="border border-secondary px-14 py-16">
-              <div className="mb-4"><IconPark /></div>
+              <div className="mb-4">
+                <IconPark />
+              </div>
               <div className="text-3xl mb-4 font-bold">Blockchain Courses</div>
               <p className="text-xl">
                 Gain a deep understanding of blockchain fundamentals, smart
                 contract development, decentralized applications (DApps), and
-                more through our specialized courses.
+                more through our specialized courses&#8228;
               </p>
             </div>
             <div className="border border-secondary px-14 py-16">
-              <div className="mb-4"><IconPark /></div>
+              <div className="mb-4">
+                <IconPark />
+              </div>
               <div className="text-3xl mb-4 font-bold">Developer Resources</div>
               <p className="text-xl">
                 Access a wealth of tutorials, documentation, code samples, and
                 tools curated to support your ongoing learning and professional
-                growth.
+                growth&#8228;
               </p>
             </div>
           </div>

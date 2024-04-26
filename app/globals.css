@@ -53,14 +53,18 @@ body {
   z-index: -1;
 }
 
-.event-card:hover::after{
-  transform: translateY(0);
-  opacity: 0.809;
-}
 .event-card > .text-secondary{
   transition: all .25s;
 }
-.event-card:hover > .text-secondary{
-  color: #080808;
-  border-color: #080808;
+
+@media (min-width: 768px) {
+  .event-card:hover::after{
+    transform: translateY(0);
+    opacity: 0.809;
+  }
+  
+  .event-card:hover > .text-secondary{
+    color: #080808;
+    border-color: #080808;
+  }
 }

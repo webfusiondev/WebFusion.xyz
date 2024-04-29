@@ -7,7 +7,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-*::selection{
+*::selection {
   background-color: rgba(0, 236, 151, 0.4);
 }
 
@@ -20,11 +20,11 @@
 }
 
 body {
-  color: #ffffff;
+  color: #fefefe;
   background: #080808;
 }
 
-.select-none{
+.select-none {
   -webkit-user-select: none;
   user-select: none;
 }
@@ -35,36 +35,84 @@ body {
   }
 }
 
-.event-card{
+.event-card {
   position: relative;
   overflow: hidden;
-  transition: all .25s;
+  transition: all 0.25s;
 }
 .event-card::after {
-  content: '';
+  content: "";
   top: 0;
   left: 0;
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: #00EC97;
+  background-color: #00ec97;
   transform: translateY(100%);
-  transition: transform .25s;
+  transition: transform 0.25s;
   z-index: -1;
 }
 
-.event-card > .text-secondary{
-  transition: all .25s;
+.event-card > .text-secondary {
+  transition: all 0.25s;
 }
 
 @media (min-width: 768px) {
-  .event-card:hover::after{
+  .event-card:hover::after {
     transform: translateY(0);
     opacity: 0.809;
   }
-  
-  .event-card:hover > .text-secondary{
+
+  .event-card:hover > .text-secondary {
     color: #080808;
     border-color: #080808;
   }
+}
+
+.nav-links {
+  transform: translateX(100%);
+  transition: transform 0.25s ease-in;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  display: flex;
+  background-color: #080808;
+}
+
+body.open-nav {
+  overflow: hidden;
+}
+body.open-nav .nav-links {
+  transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    transform: translateX(0);
+    position: relative;
+    height: initial;
+    width: initial;
+    background-color: transparent;
+    transition: none;
+  }
+}
+
+#hamburger > span {
+  transition: transform 0.1s ease-in;
+  height: 2px;
+  width: 2.25rem;
+  display: block;
+  background-color: #fefefe;
+}
+
+body.open-nav #hamburger > .topline {
+  transform: translateY(5px) rotate(45deg);
+  transform-origin: center;
+}
+body.open-nav #hamburger > .bottomline {
+  transform: translateY(-5px) rotate(-45deg);
+  transform-origin: center;
 }

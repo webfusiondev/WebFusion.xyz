@@ -98,6 +98,10 @@ body.open-nav .nav-links {
     background-color: transparent;
     transition: none;
   }
+
+  body.open-nav {
+    overflow: initial;
+  }
 }
 
 #hamburger > span {

@@ -20,10 +20,10 @@ const NavElements = ({ navRoute }: { navRoute: Route }) => {
       <Link onClick={() => document.body.classList.remove("open-nav")} href="/">
         <div className={getClassName("home")}>Home</div>
       </Link>
-      {/* &bull;
-      <Link onClick={() => document.body.classList.remove("open-nav")} href="/">
+      &bull;
+      <Link onClick={() => document.body.classList.remove("open-nav")} href="/events">
         <div className={getClassName("events")}>Events</div>
-      </Link> */}
+      </Link>
       &bull;
       <Link
         onClick={() => document.body.classList.remove("open-nav")}
@@ -37,7 +37,12 @@ const NavElements = ({ navRoute }: { navRoute: Route }) => {
 
 const Nav = (props: Props) => {
   return (
-    <nav className={widolte.className +" px-4 md:px-8 lg:px-16 xl:px-24 py-6 flex items-center h-32 justify-between select-none text-xl border-b border-b-secondary z-10 relative"}>
+    <nav
+      className={
+        widolte.className +
+        " px-4 md:px-8 lg:px-16 xl:px-24 py-6 flex items-center h-32 justify-between select-none text-xl border-b border-b-secondary z-10 relative font-light"
+      }
+    >
       <Link className="z-10" href="/">
         <Logo />
       </Link>

@@ -52,7 +52,7 @@ export default function Courses({
           backgroundSize: "cover, cover",
         }}
         className={
-          widolte.className +
+          ki.className +
           " h-96 flex flex-col md:flex-row items-center justify-center font-medium text-4xl xl:text-6xl mb-16"
         }
       >

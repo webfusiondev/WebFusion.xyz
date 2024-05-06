@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import IconPark from "./icon-park";
 import Nav from "./nav";
+import { ki } from "./fonts";
 
 export default function Home() {
   return (
@@ -10,7 +11,12 @@ export default function Home() {
       <main className="min-h-[80vh] md:min-h-screen flex flex-col relative overflow-x-clip">
         <Nav route="home" />
         <section className="py-20 md:py-28 lg:py-32 xl:py-44 px-8 md:px-16 flex flex-col justify-center grow">
-          <div className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-medium mb-5 xl:pl-8">
+          <div
+            className={
+              ki.className +
+              " text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-medium mb-5 xl:pl-8"
+            }
+          >
             Welcome to{" "}
             <span className="bg-brand-green text-brand-black px-4">
               WebFusion
@@ -18,8 +24,8 @@ export default function Home() {
           </div>
           <p className="text-xl md:text-2xl xl:text-3xl font-light mb-20 max-w-5xl xl:pl-8">
             At WebFusion, we are dedicated to{" "}
-            <span className="text-brand-green">empowering</span>{" "}
-            <span className="text-brand-green">developers</span>
+            <span className="text-brand-green font-bold">empowering</span>{" "}
+            <span className="text-brand-green font-bold">developers</span>
             <span className="inline">
               {" "}
               and advancing technology through community-driven initiatives,
@@ -31,7 +37,12 @@ export default function Home() {
             />
           </p>
           {/* right aligned section */}
-          <div className="text-right font-bold text-lg md:text-xl xl:text-2xl text-brand-green">
+          <div
+            className={
+              ki.className +
+              " text-right font-bold text-lg md:text-xl xl:text-2xl text-brand-green"
+            }
+          >
             Our Mission
           </div>
           <p
@@ -51,7 +62,7 @@ export default function Home() {
             width: "max(7vw, 48px)",
             maxWidth: "62px",
             transform: "translate(-50%, 50%)",
-            zIndex: 0
+            zIndex: 0,
           }}
           viewBox="0 0 63.5 113.5"
           xmlns="http://www.w3.org/2000/svg"
@@ -119,11 +130,15 @@ export default function Home() {
         />
       </main>
       <section
-        className="py-20 xl:py-24 overflow-hidden"
+        className="py-20 xl:py-24 overflow-hidden font-light"
         style={{ backgroundColor: "rgba(150, 150, 150, 0.05)" }}
       >
         <div className="px-12 lg:px-16 xl:px-24 pb-16 text-lg md:text-xl xl:text-2xl">
-          <div className="font-medium text-4xl xl:text-6xl mb-9">Events</div>
+          <div
+            className={ki.className + " font-medium text-4xl xl:text-6xl mb-9"}
+          >
+            Events
+          </div>
           <p className="mb-4">
             Discover and participate in a diverse range of events organized or
             sponsored by WebFusion&#8228; From hackathons and bootcamps to
@@ -143,7 +158,11 @@ export default function Home() {
           className="grid grid-cols-6 events-grid"
         >
           <div className="event-card md:hover:text-brand-black col-span-6 md:col-span-3 xl:col-span-2 border border-secondary p-12 md:p-20 xl:p-24">
-            <div className="font-bold text-xl md:text-2xl xl:text-3xl mb-6">
+            <div
+              className={
+                ki.className + " font-bold text-xl md:text-2xl xl:text-3xl mb-6"
+              }
+            >
               Hackathons
             </div>
             <p className="md:text-lg xl:text-xl mb-8">
@@ -156,7 +175,11 @@ export default function Home() {
             </span>
           </div>
           <div className="event-card md:hover:text-brand-black col-span-6 md:col-span-3 xl:col-span-2 border border-secondary p-12 md:p-20 xl:p-24">
-            <div className="font-bold text-xl md:text-2xl xl:text-3xl mb-6">
+            <div
+              className={
+                ki.className + " font-bold text-xl md:text-2xl xl:text-3xl mb-6"
+              }
+            >
               Bootcamps
             </div>
             <p className="md:text-lg xl:text-xl mb-8">
@@ -168,7 +191,11 @@ export default function Home() {
             </span>
           </div>
           <div className="event-card md:hover:text-brand-black col-span-6 md:col-span-3 xl:col-span-2 border border-secondary p-12 md:p-20 xl:p-24">
-            <div className="font-bold text-xl md:text-2xl xl:text-3xl mb-6">
+            <div
+              className={
+                ki.className + " font-bold text-xl md:text-2xl xl:text-3xl mb-6"
+              }
+            >
               Workshops
             </div>
             <p className="md:text-lg xl:text-xl mb-8">
@@ -181,7 +208,11 @@ export default function Home() {
             </span>
           </div>
           <div className="event-card md:hover:text-brand-black col-span-6 md:col-span-3 border border-secondary p-12 md:p-20 xl:p-24">
-            <div className="font-bold text-xl md:text-2xl xl:text-3xl mb-6">
+            <div
+              className={
+                ki.className + " font-bold text-xl md:text-2xl xl:text-3xl mb-6"
+              }
+            >
               Webinars
             </div>
             <p className="md:text-lg xl:text-xl mb-8">
@@ -194,7 +225,11 @@ export default function Home() {
             </span>
           </div>
           <div className="event-card md:hover:text-brand-black col-span-6 md:col-span-3 border border-secondary p-12 md:p-20 xl:p-24">
-            <div className="font-bold text-xl md:text-2xl xl:text-3xl mb-6">
+            <div
+              className={
+                ki.className + " font-bold text-xl md:text-2xl xl:text-3xl mb-6"
+              }
+            >
               In-Person (IRL) Events
             </div>
             <p className="md:text-lg xl:text-xl mb-8">
@@ -208,11 +243,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="mb-28">
+      <section className="mb-28 font-light">
         <div className="py-16 grid grid-cols-3 gap-2 md:gap-4 lg:gap-8 xl:gap-10 max-w-6xl mx-auto px-8 xl:px-0">
-          <div className="col-span-3 md:col-span-1 text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-medium flex flex-row md:flex-col md:justify-center mb-4 md:mb-0">
+          <div
+            className={
+              ki.className +
+              " col-span-3 md:col-span-1 text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-medium flex flex-row md:flex-col md:justify-center mb-4 md:mb-0"
+            }
+          >
             <div>
-              Courses <span className="text-brand-green mr-2 md:mr-0">&</span>
+              Courses <span className="text-brand-green mr-2 md:mr-0">&amp;</span>
             </div>
             <div>Resources</div>
           </div>
@@ -275,12 +315,23 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div style={{ backgroundColor: "#0F0F0F" }} className="text-center md:text-lg xl:text-xl py-12">
-          <Link style={{ backgroundColor: "#161616" }} className=" border-b border-brand-green p-2" href="courses-and-resources">View Resources</Link>
+        <div
+          style={{ backgroundColor: "#0F0F0F" }}
+          className="text-center md:text-lg xl:text-xl pt-6 pb-12"
+        >
+          <Link
+            style={{ backgroundColor: "#161616" }}
+            className=" border-b border-brand-green p-2"
+            href="courses-and-resources"
+          >
+            View Resources
+          </Link>
         </div>
       </section>
-      <section className="px-12 lg:px-16 xl:px-24 text-center mb-28">
-        <div className="font-medium text-4xl xl:text-6xl mb-9">
+      <section className="px-12 lg:px-16 xl:px-24 text-center mb-28 font-light">
+        <div
+          className={ki.className + " font-medium text-4xl xl:text-6xl mb-9"}
+        >
           Meet the <span className="text-brand-green">Team</span>
         </div>
         <p className="md:text-lg xl:text-xl font-light max-w-5xl mx-auto mb-12">
@@ -353,7 +404,9 @@ export default function Home() {
         </div>
       </section>
       <section className="px-12 lg:px-16 xl:px-24 mb-24">
-        <div className="font-medium text-4xl xl:text-6xl mb-6">
+        <div
+          className={ki.className + " font-medium text-4xl xl:text-6xl mb-6"}
+        >
           Partners &amp; <span className="text-brand-green">Sponsors</span>
         </div>
         <p className="md:text-lg xl:text-xl font-light max-w-5xl mb-12">

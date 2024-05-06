@@ -120,3 +120,12 @@ body.open-nav #hamburger > .bottomline {
   transform: translateY(-5px) rotate(-45deg);
   transform-origin: center;
 }
+
+ul ul, ol ol, ol ul, ul ol {
+  padding-left: 1rem;
+}
+
+pre code{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

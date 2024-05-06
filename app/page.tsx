@@ -1,39 +1,14 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import IconPark from "./icon-park";
-import Logo from "./logo";
-import Hamburger from "./hamburger";
+import Nav from "./nav";
 
 export default function Home() {
   return (
     <>
       <main className="min-h-[80vh] md:min-h-screen flex flex-col relative overflow-x-clip">
-        <nav className="px-4 md:px-8 lg:px-16 xl:px-24 py-6 flex items-center h-32 justify-between select-none text-xl border-b border-b-secondary z-10">
-          <Logo />
-          <div className="items-center justify-center gap-4 z-0 hidden md:flex md:flex-row">
-            <div className="cursor-pointer text-brand-green font-bold">
-              Home
-            </div>
-            &bull;
-            <div className="cursor-pointer">Events</div>
-            &bull;
-            <div className="cursor-pointer">Courses &amp; Resources</div>
-          </div>
-          {/* mobile nav : tricky bug */}
-          <div className="items-center justify-center gap-4 z-0 nav-links md:hidden">
-            <div className="cursor-pointer text-brand-green font-bold">
-              Home
-            </div>
-            &bull;
-            <div className="cursor-pointer">Events</div>
-            &bull;
-            <div className="cursor-pointer">Courses &amp; Resources</div>
-          </div>
-          {/* <span className="invisible hidden md:block">
-            <Logo />
-          </span> */}
-          <Hamburger />
-        </nav>
+        <Nav route="home" />
         <section className="py-20 md:py-28 lg:py-32 xl:py-44 px-8 md:px-16 flex flex-col justify-center grow">
           <div className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-medium mb-5 xl:pl-8">
             Welcome to{" "}
@@ -41,7 +16,7 @@ export default function Home() {
               WebFusion
             </span>
           </div>
-          <p className="text-xl md:text-2xl xl:text-3xl mb-20 max-w-5xl xl:pl-8">
+          <p className="text-xl md:text-2xl xl:text-3xl font-light mb-20 max-w-5xl xl:pl-8">
             At WebFusion, we are dedicated to{" "}
             <span className="text-brand-green">empowering</span>{" "}
             <span className="text-brand-green">developers</span>
@@ -61,7 +36,7 @@ export default function Home() {
           </div>
           <p
             style={{ alignSelf: "flex-end" }}
-            className="max-w-xl text-right md:text-lg xl:text-xl"
+            className="max-w-xl text-right md:text-lg xl:text-xl font-light"
           >
             To foster innovation, inclusivity, and skill development in the
             rapidly evolving landscape of{" "}
@@ -233,7 +208,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
+      <section className="mb-28">
         <div className="py-16 grid grid-cols-3 gap-2 md:gap-4 lg:gap-8 xl:gap-10 max-w-6xl mx-auto px-8 xl:px-0">
           <div className="col-span-3 md:col-span-1 text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-medium flex flex-row md:flex-col md:justify-center mb-4 md:mb-0">
             <div>
@@ -254,7 +229,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="overflow-hidden mb-40">
+        <div className="overflow-hidden">
           <div
             style={{ backgroundColor: "#0F0F0F", margin: "-1px" }}
             className="grid grid-cols-6"
@@ -300,7 +275,187 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div style={{ backgroundColor: "#0F0F0F" }} className="text-center md:text-lg xl:text-xl py-12">
+          <Link style={{ backgroundColor: "#161616" }} className=" border-b border-brand-green p-2" href="courses-and-resources">View Resources</Link>
+        </div>
       </section>
+      <section className="px-12 lg:px-16 xl:px-24 text-center mb-28">
+        <div className="font-medium text-4xl xl:text-6xl mb-9">
+          Meet the <span className="text-brand-green">Team</span>
+        </div>
+        <p className="md:text-lg xl:text-xl font-light max-w-5xl mx-auto mb-12">
+          Get to know the passionate individuals driving the mission and vision
+          of WebFusion forward&#8228; Our diverse team brings together expertise
+          from various domains to create impactful experiences and opportunities
+          for developers worldwide&#8228;
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 font-light">
+          <div style={{ backgroundColor: "#0F0F0F" }} className="p-8">
+            <Image
+              alt="kyle walker"
+              width={150}
+              height={150}
+              className="mb-8 mx-auto"
+              src="/team/kylewalker.png"
+            />
+            <div className="font-bold text-lg md:text-xl xl:text-2xl">
+              Kyle Walker
+            </div>
+            <div className="mb-8 text-lg md:text-xl xl:text-2xl">
+              Project Manager
+            </div>
+            <p className="md:text-lg">
+              Meet Kyle, a seasoned project manager with a knack for
+              orchestrating success&#8228; Precision, strategy, and teamwork
+              define his approach to excellence&#8228;
+            </p>
+          </div>
+          <div style={{ backgroundColor: "#0F0F0F" }} className="p-8">
+            <Image
+              alt="sarah cook"
+              width={150}
+              height={150}
+              className="mb-8 mx-auto"
+              src="/team/sarahcook.png"
+            />
+            <div className="font-bold text-lg md:text-xl xl:text-2xl">
+              Sarah Cook
+            </div>
+            <div className="mb-8 text-lg md:text-xl xl:text-2xl">
+              Frontend Developer
+            </div>
+            <p className="md:text-lg">
+              Sarah, a dynamic frontend developer, crafts digital experiences
+              that captivate and innovate&#8228; Her code is the canvas for
+              user-centric masterpieces&#8228;
+            </p>
+          </div>
+          <div style={{ backgroundColor: "#0F0F0F" }} className="p-8">
+            <Image
+              alt="james dinero"
+              width={150}
+              height={150}
+              className="mb-8 mx-auto"
+              src="/team/jamesdinero.png"
+            />
+            <div className="font-bold text-lg md:text-xl xl:text-2xl">
+              James Dinero
+            </div>
+            <div className="mb-8 text-lg md:text-xl xl:text-2xl">
+              Community Manager
+            </div>
+            <p className="md:text-lg">
+              James, the community manager extraordinaire, cultivates vibrant
+              online spaces where connections thrive&#8228; Engagement, empathy,
+              and enthusiasm are his guiding principles&#8228;
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="px-12 lg:px-16 xl:px-24 mb-24">
+        <div className="font-medium text-4xl xl:text-6xl mb-6">
+          Partners &amp; <span className="text-brand-green">Sponsors</span>
+        </div>
+        <p className="md:text-lg xl:text-xl font-light max-w-5xl mb-12">
+          We are grateful for the support and collaboration of our esteemed
+          partners and sponsors, who share our vision and contribute to the
+          success of our initiatives&#8228; Together, we strive to create
+          meaningful opportunities and impact within the developer community
+        </p>
+        <div className="flex justify-between gap-4 max-w-5xld mx-auto flex-wrap">
+          <div
+            style={{ backgroundColor: "#0F0F0F" }}
+            className="p-4 flex justify-center"
+          >
+            <Link href="https://twitter.com/NEARDevHub" target="_blank">
+              <Image
+                className="select-none"
+                alt="near dev hub"
+                width={200}
+                height={200}
+                style={{
+                  maxWidth: "17.5vw",
+                }}
+                src="/partners/neardevhub.png"
+              />
+            </Link>
+          </div>
+          <div
+            style={{ backgroundColor: "#0F0F0F" }}
+            className="p-4 flex justify-center"
+          >
+            <Link href="https://twitter.com/nearafrica_" target="_blank">
+              <Image
+                className="select-none"
+                alt="near africa"
+                width={200}
+                height={200}
+                style={{
+                  maxWidth: "17.5vw",
+                }}
+                src="/partners/nearafrica.jpeg"
+              />
+            </Link>
+          </div>
+          <div
+            style={{ backgroundColor: "#0F0F0F" }}
+            className="p-4 flex justify-center"
+          >
+            <Link href="https://twitter.com/COLDSCOLLECTIVE" target="_blank">
+              <Image
+                className="select-none"
+                alt="colds collective"
+                width={200}
+                height={200}
+                style={{
+                  maxWidth: "17.5vw",
+                }}
+                src="/partners/coldscollective.jpeg"
+              />
+            </Link>
+          </div>
+          <div
+            style={{ backgroundColor: "#0F0F0F" }}
+            className="p-4 flex justify-center"
+          >
+            <Link href="https://twitter.com/potlock_" target="_blank">
+              <Image
+                className="select-none"
+                alt="potlock"
+                width={200}
+                height={200}
+                style={{
+                  maxWidth: "17.5vw",
+                }}
+                src="/partners/potlock.jpeg"
+              />
+            </Link>
+          </div>
+          <div
+            style={{ backgroundColor: "#0F0F0F" }}
+            className="p-4 flex justify-center"
+          >
+            <Link href="https://twitter.com/welcomehomeintl" target="_blank">
+              <Image
+                className="select-none"
+                alt="welcomehomeintl"
+                width={200}
+                height={200}
+                style={{
+                  maxWidth: "17.5vw",
+                }}
+                src="/partners/welcomehomeintl.jpeg"
+              />
+            </Link>
+          </div>
+        </div>
+      </section>
+      <footer
+        style={{ backgroundColor: "#0F0F0F" }}
+        className="py-4 px-12 lg:px-16 xl:px-24 text-center"
+      >
+        Copyright &copy; 2024 WebFusion
+      </footer>
     </>
   );
 }

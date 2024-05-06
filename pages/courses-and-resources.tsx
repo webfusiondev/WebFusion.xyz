@@ -63,7 +63,7 @@ export default function Courses({
       </div>
       <div
         className={
-          widolte.className + " grid max-w-7xl mx-auto grid-cols-1 md:grid-cols-2 xl:grid-cols-3 px-4"
+          widolte.className + " grid max-w-7xl mx-auto grid-cols-1 md:grid-cols-2 xl:grid-cols-3 px-4 pb-40"
         }
       >
         {resources.map(({ name, description, markdown }, idx) => (
@@ -90,7 +90,7 @@ const ResourceCard = ({ title, description, markdown }: ResourceCardProps) => {
   return (
     <>
       <Dialog
-        className="absolute inset-0 z-10"
+        className="fixed inset-0 z-10"
         open={isOpen}
         onClose={() => setIsOpen(false)}
       >
@@ -117,14 +117,29 @@ const ResourceCard = ({ title, description, markdown }: ResourceCardProps) => {
             className={ki.className}
             components={{
               h1: ({ children, node, ...props }) => (
-                <div {...props} className="font-bold text-2xl my-5">
+                <h1 {...props} className="font-semibold text-[2em] mt-6 mb-1">
                   {children}
-                </div>
+                </h1>
               ),
               h2: ({ children, node, ...props }) => (
-                <div {...props} className="font-bold text-xl my-5">
+                <h2 {...props} className="font-semibold text-2xl mt-6 mb-1">
                   {children}
-                </div>
+                </h2>
+              ),
+              h3: ({ children, node, ...props }) => (
+                <h3 {...props} className="font-semibold text-xl mt-6 mb-1">
+                  {children}
+                </h3>
+              ),
+              h4: ({ children, node, ...props }) => (
+                <h4 {...props} className="font-semibold text-base mt-6 mb-1">
+                  {children}
+                </h4>
+              ),
+              h5: ({ children, node, ...props }) => (
+                <h5 {...props} className="font-semibold text-sm mt-6 mb-1">
+                  {children}
+                </h5>
               ),
               a: ({ children, node, href, ...props }) => (
                 <Link
@@ -142,9 +157,14 @@ const ResourceCard = ({ title, description, markdown }: ResourceCardProps) => {
                 </Link>
               ),
               p: ({ children, node, ...props }) => (
-                <p {...props} className="mb-2">
+                <p {...props} className="mb-4">
                   {children}
                 </p>
+              ),
+              li: ({ children, node, ...props }) => (
+                <li {...props} className="mb-2">
+                  {children}
+                </li>
               ),
               ol: ({ children, node, ...props }) => (
                 <ol {...props} className="list-decimal list-inside">

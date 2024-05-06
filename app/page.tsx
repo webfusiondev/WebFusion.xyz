@@ -48,10 +48,10 @@ export default function Home() {
             position: "absolute",
             bottom: "0",
             left: "50%",
-            // height: "112px",
             width: "max(7vw, 48px)",
             maxWidth: "62px",
             transform: "translate(-50%, 50%)",
+            zIndex: 0
           }}
           viewBox="0 0 63.5 113.5"
           xmlns="http://www.w3.org/2000/svg"

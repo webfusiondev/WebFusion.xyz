@@ -37,8 +37,8 @@ const NavElements = ({ navRoute }: { navRoute: Route }) => {
 
 const Nav = (props: Props) => {
   return (
-    <nav className={widolte.className +" px-4 md:px-8 lg:px-16 xl:px-24 py-6 flex items-center h-32 justify-between select-none text-xl border-b border-b-secondary z-0 relative"}>
-      <Link href="/">
+    <nav className={widolte.className +" px-4 md:px-8 lg:px-16 xl:px-24 py-6 flex items-center h-32 justify-between select-none text-xl border-b border-b-secondary z-10 relative"}>
+      <Link className="z-10" href="/">
         <Logo />
       </Link>
       <div className="items-center justify-center gap-4 z-0 hidden md:flex md:flex-row">

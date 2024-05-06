@@ -128,7 +128,7 @@ const ResourceCard = ({ title, description, markdown }: ResourceCardProps) => {
               ),
               a: ({ children, node, href, ...props }) => (
                 <Link
-                  className=" border-b border-brand-green break-words"
+                  className="outline-none border-b border-brand-green break-words"
                   {...props}
                   href={href ?? "#"}
                   target={

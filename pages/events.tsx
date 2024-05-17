@@ -12,7 +12,9 @@ export default function Courses() {
             "linear-gradient(rgba(8, 8, 8, 0.67), rgba(8, 8, 8, 0.67)) left top, url(/eventsbg.jpeg)",
           backgroundRepeat: "no-repeat, no-repeat",
           backgroundSize: "cover, cover",
-          backgroundPosition: "center"
+          backgroundPosition: "center",
+          filter: "grayscale(100%)",
+          WebkitFilter: "grayscale(100%)"
         }}
         className={
           ki.className +

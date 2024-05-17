@@ -63,7 +63,7 @@ export default function Courses({
       </div>
       <div
         className={
-          widolte.className + " grid max-w-7xl mx-auto grid-cols-1 md:grid-cols-2 xl:grid-cols-3 px-4 pb-40"
+          widolte.className + " grid gap-4 max-w-7xl mx-auto grid-cols-1 md:grid-cols-2 xl:grid-cols-3 px-4 pb-40"
         }
       >
         {resources.map(({ name, description, markdown }, idx) => (
@@ -98,6 +98,7 @@ const ResourceCard = ({ title, description, markdown }: ResourceCardProps) => {
           style={{
             backgroundColor: "rgba(217, 217, 217, 0.06)",
             backdropFilter: "blur(6px)",
+            WebkitBackdropFilter: "blur(6px)",
           }}
           className="fixed inset-0 z-0"
           aria-hidden="true"

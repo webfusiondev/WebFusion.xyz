@@ -129,3 +129,7 @@ pre code{
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+
+.heroimg > img{
+  transition: filter .4s ease;
+}

@@ -1,16 +1,42 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 
 import IconPark from "./icon-park";
 import Nav from "./nav";
 import { ki } from "./fonts";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import { ScrollTrigger } from "gsap/all";
 
+gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
+  const container = useRef(null);
+  useGSAP(
+    () => {
+      gsap
+        .timeline({ defaults: { duration: 1 } })
+        .from(".heroimg", {
+          height: 0,
+        })
+        .from(".heroimg img", { scale: 1.2 });
+      gsap.from(".countup", {
+        textContent: 0,
+        duration: 0.5,
+        snap: { textContent: 1 },
+        stagger: 0.5,
+        scrollTrigger: { trigger: ".countup", start: "bottom bottom" },
+        ease: "slow(0.7,0.7,false)",
+      });
+    },
+    { scope: container }
+  );
   return (
-    <>
+    <div ref={container}>
       <main className="min-h-[80vh] md:min-h-screen flex flex-col relative overflow-x-clip">
         <Nav route="home" />
-        <section className="py-20 md:py-28 lg:py-32 xl:py-44 px-8 md:px-16 flex flex-col justify-center grow">
+        <section className="py-20 md:py-28 lg:py-32 xl:py-44 px-8 md:px-16 grow">
           <div
             className={
               ki.className +
@@ -23,7 +49,7 @@ export default function Home() {
             </span>
           </div>
           <p className="text-xl md:text-2xl xl:text-3xl font-light mb-20 max-w-5xl xl:pl-8">
-            At WebFusion, we are dedicated to{" "}
+            We are dedicated to{" "}
             <span className="text-brand-green font-bold">empowering</span>{" "}
             <span className="text-brand-green font-bold">developers</span>
             <span className="inline">
@@ -37,22 +63,37 @@ export default function Home() {
             />
           </p>
           {/* right aligned section */}
-          <div
-            className={
-              ki.className +
-              " text-right font-bold text-lg md:text-xl xl:text-2xl text-brand-green"
-            }
-          >
-            Our Mission
+          <div className="grid grid-cols-11 xl:pl-8">
+            <div className="col-span-11 md:col-span-6 hidden md:flex mr-14 max- h-[263px] relative items-center">
+              <div className="h-full w-full heroimg overflow-hidden z-10">
+                <img
+                  className="grayscale hover:grayscale-0"
+                  style={{ objectFit: "cover", height: "100%", width: "100%" }}
+                  src="/webfusionhome.jpeg"
+                />
+              </div>
+              <div className="absolute bottom-[-14px] right-[-14px] w-2/3 h-[85%] border-b border-r border-brand-green z-0"></div>
+            </div>
+            <div className="col-span-11 md:col-span-5 flex flex-col justify-center">
+              <div
+                className={
+                  ki.className + " font-bold text-lg md:text-xl xl:text-2x"
+                }
+              >
+                Our <span className="text-brand-green">Mission</span>
+              </div>
+              <p
+                // style={{ alignSelf: "flex-end" }}
+                className="max-w-xl md:text-lg xl:text-xl font-light"
+              >
+                To foster innovation, inclusivity, and skill development in the
+                rapidly evolving landscape of{" "}
+                <span className="font-bold">Web2 and Web3 technologies</span>
+              </p>
+            </div>
           </div>
-          <p
-            style={{ alignSelf: "flex-end" }}
-            className="max-w-xl text-right md:text-lg xl:text-xl font-light"
-          >
-            To foster innovation, inclusivity, and skill development in the
-            rapidly evolving landscape of{" "}
-            <span className="font-bold">Web2 and Web3 technologies</span>
-          </p>
+
+          {/* endsection */}
         </section>
         <svg
           style={{
@@ -130,6 +171,39 @@ export default function Home() {
         />
       </main>
       <section
+        style={{ backgroundColor: "rgba(0, 236, 151, 0.05)" }}
+        className="grid grid-cols-6 gap-4 px-12 lg:px-16 xl:px-24 py-24 text-center"
+      >
+        <span className="col-span-6 lg:col-span-1" />
+        <div
+          className={
+            ki.className +
+            " flex flex-col justify-center font-medium text-4xl mr-4 lg:text-right col-span-6 lg:col-span-1 text-center"
+          }
+        >
+          <div className="mb-2">Our numbers</div>
+          <div>
+            since <span className="text-brand-green">2023</span>
+          </div>
+        </div>
+        <div className="flex flex-col justify-center col-span-3 lg:col-span-1">
+          <div className="text-6xl mb-2 countup">2</div>
+          <div className="text-xl">Countries</div>
+        </div>
+        <div className="flex flex-col justify-center col-span-3 lg:col-span-1">
+          <div className="text-6xl mb-2 countup">2</div>
+          <div className="text-xl">Hackathons</div>
+        </div>
+        <div className="flex flex-col justify-center col-span-3 lg:col-span-1">
+          <div className="text-6xl mb-2 countup">4</div>
+          <div className="text-xl">Workshops</div>
+        </div>
+        <div className="flex flex-col justify-center col-span-3 lg:col-span-1">
+          <div className="text-6xl mb-2 countup">40</div>
+          <div className="text-xl">Developers</div>
+        </div>
+      </section>
+      <section
         className="py-20 xl:py-24 overflow-hidden font-light"
         style={{ backgroundColor: "rgba(150, 150, 150, 0.05)" }}
       >
@@ -147,9 +221,11 @@ export default function Home() {
           </p>
           <div>
             Join us at{" "}
-            <span className="font-bold text-brand-green cursor-pointer">
-              upcoming events
-            </span>{" "}
+            <Link href="/events">
+              <span className="font-bold text-brand-green">
+                upcoming events
+              </span>
+            </Link>{" "}
             or explore highlights from past gatherings&#8228;
           </div>
         </div>
@@ -252,7 +328,8 @@ export default function Home() {
             }
           >
             <div>
-              Courses <span className="text-brand-green mr-2 md:mr-0">&amp;</span>
+              Courses{" "}
+              <span className="text-brand-green mr-2 md:mr-0">&amp;</span>
             </div>
             <div>Resources</div>
           </div>
@@ -505,10 +582,12 @@ export default function Home() {
       </section>
       <footer
         style={{ backgroundColor: "#0F0F0F" }}
-        className="py-4 px-12 lg:px-16 xl:px-24 text-center"
+        className="py-4 px-12 lg:px-16 xl:px-24  flex justify-between"
       >
-        Copyright &copy; 2024 WebFusion
+        <div className={ki.className}><Link target="_blank" href="https://x.com/webfusiondev">x.com/webfusiondev</Link></div>
+        <div>Copyright &copy; 2024 WebFusion</div>
+        <div className={ki.className}><Link target="_blank" href="mailto:webfusiondevs@gmail.com">webfusiondevs@gmail.com</Link></div>
       </footer>
-    </>
+    </div>
   );
 }

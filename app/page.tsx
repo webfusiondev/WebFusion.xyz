@@ -7,7 +7,7 @@ import Nav from "./nav";
 import { ki } from "./fonts";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/all";
 import Footer from "./footer";
 
@@ -581,7 +581,61 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="bg-[rgba(150,150,150,0.05)] pt-14 px-12 lg:px-16 xl:px-24 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-20 font-light pb-20">
+        <div className="flex flex-col justify-center">
+          <div className={ki.className + " font-medium text-2xl md:text-4xl lg:text-5xl xl:text-6xl mb-6"}>
+            Reviews
+          </div>
+          <p className="md:text-lg xl:text-xl">
+            With the aim of achieving our set mission and goals, here is what
+            people have to say about us
+          </p>
+        </div>
+        <Carousel />
+      </section>
       <Footer route="home" />
     </div>
   );
 }
+
+const Carousel = () => {
+  const slideDurationInSeconds = 4;
+  const numOfSlides = 2;
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const changeSlideTimeout = setTimeout(() => {
+      setCurrentSlide((currentSlide + 1) % numOfSlides);
+    }, slideDurationInSeconds * 1000);
+
+    return () => clearTimeout(changeSlideTimeout);
+  }, [currentSlide]);
+
+  return (
+    <>
+      <div className="border border-[rgba(254,254,254,0.47)] px-7 py-8 relative">
+        <div className="flex justify-between mb-3 md:mb-5 lg:mb-7">
+          <span className="font-normal text-lg md:text-xl xl:text-2xl">Kyle Samsons</span>
+        </div>
+        <p className="lg:text-lg">
+          My first encounter with WebFusion was during a workshop in the year
+          2023&#8228; I can say it was a life changing experience for a newbie
+          in tech and others in attendance as well&#8228;
+        </p>
+        <div className="controls absolute -bottom-6 in left-1/2 -translate-x-1/2 w-1/2 max-w-36 flex justify-center">
+          {Array(numOfSlides).fill(0).map((_, idx) => (
+            <span
+              key={idx}
+              onClick={() => setCurrentSlide(idx)}
+              className={`inline-block h-2 w-6 cursor-pointer rounded-full transition-colors duration-1000 ${
+                currentSlide === idx
+                  ? "bg-brand-green"
+                  : "bg-[rgba(82,82,82,0.67)]"
+              } mx-1`}
+            />
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};

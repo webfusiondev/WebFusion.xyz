@@ -3,10 +3,5 @@
     "name": "Near DevHub",
     "description": "DevHub is NEAR Protocol's central hub for builders, offering tools, community, and support for projects. Get involved and stay connected!",
     "markdown": "neardevhub.md"
-  },
-  {
-    "name": "Keypom",
-    "description": "Instantly distribute tokens, NFTs, and tickets through simple links. Customize drops and engage audiences effortlessly. Cryptocurrency made easy.",
-    "markdown": "keypom.md"
   }
 ]

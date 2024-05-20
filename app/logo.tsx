@@ -1,6 +1,8 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  style?: React.CSSProperties
+};
 
 const Logo = (props: Props) => {
   return (
@@ -10,7 +12,7 @@ const Logo = (props: Props) => {
       width="104px"
       height="104px"
       version="1.1"
-      style={{shapeRendering: 'geometricPrecision', textRendering: 'geometricPrecision', fillRule: 'evenodd', clipRule: 'evenodd', imageRendering: 'auto', zIndex: 1}}
+      style={{shapeRendering: 'geometricPrecision', textRendering: 'geometricPrecision', fillRule: 'evenodd', clipRule: 'evenodd', imageRendering: 'auto', zIndex: 1, ...props.style}}
       viewBox="0 0 11000 11000"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >

@@ -8,6 +8,7 @@ import Nav from "@/app/nav";
 import Expand from "@/app/expand";
 import { ki, widolte } from "@/app/fonts";
 import "../app/globals.css";
+import Footer from "@/app/footer";
 
 type ResourceData = {
   name: string;
@@ -75,6 +76,7 @@ export default function Courses({
           />
         ))}
       </div>
+      <Footer route="courses" />
     </>
   );
 }

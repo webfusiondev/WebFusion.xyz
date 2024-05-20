@@ -9,6 +9,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
+import Footer from "./footer";
 
 gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
@@ -246,7 +247,7 @@ export default function Home() {
               bring your creative ideas to life within a supportive
               environment&#8228;
             </p>
-            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer hidden">
               Read More
             </span>
           </div>
@@ -262,7 +263,7 @@ export default function Home() {
               Dive deep into specific topics or technologies through immersive
               learning experiences led by industry experts&#8228;
             </p>
-            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer hidden">
               Read More
             </span>
           </div>
@@ -279,7 +280,7 @@ export default function Home() {
               covering a wide array of subjects relevant to modern development
               practices&#8228;
             </p>
-            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer hidden">
               Read More
             </span>
           </div>
@@ -296,7 +297,7 @@ export default function Home() {
               thought leaders, innovators, and pioneers in the tech
               industry&#8228;
             </p>
-            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer hidden">
               Read More
             </span>
           </div>
@@ -313,7 +314,7 @@ export default function Home() {
               where networking opportunities abound and camaraderie
               thrives&#8228;
             </p>
-            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer hidden">
               Read More
             </span>
           </div>
@@ -580,14 +581,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <footer
-        style={{ backgroundColor: "#0F0F0F" }}
-        className="py-4 px-12 lg:px-16 xl:px-24  flex justify-between"
-      >
-        <div className={ki.className}><Link target="_blank" href="https://x.com/webfusiondev">x.com/webfusiondev</Link></div>
-        <div>Copyright &copy; 2024 WebFusion</div>
-        <div className={ki.className}><Link target="_blank" href="mailto:webfusiondevs@gmail.com">webfusiondevs@gmail.com</Link></div>
-      </footer>
+      <Footer route="home" />
     </div>
   );
 }

@@ -3,6 +3,11 @@ import localFont from "next/font/local"
 export const ki = localFont({
   src: [
     {
+      path: "../public/fonts/ki/Ki-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
       path: "../public/fonts/ki/Ki-Regular.woff2",
       weight: "400",
       style: "normal",

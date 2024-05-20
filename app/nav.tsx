@@ -6,7 +6,7 @@ import Hamburger from "./hamburger";
 import Link from "next/link";
 import { widolte } from "./fonts";
 
-type Route = undefined | "home" | "courses" | "events";
+type Route = "home" | "courses" | "events";
 type Props = {
   route: Route;
 };

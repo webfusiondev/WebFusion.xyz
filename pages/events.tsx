@@ -1,6 +1,7 @@
 import { ki } from "@/app/fonts";
 import Nav from "@/app/nav";
 import "../app/globals.css";
+import Footer from "@/app/footer";
 
 export default function Courses() {
   return (
@@ -23,7 +24,7 @@ export default function Courses() {
       >
         <span>Events</span>
       </div>
-      <div className="py-20"></div>
+      <Footer route="events"/>
     </>
   );
 }

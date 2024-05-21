@@ -10,6 +10,7 @@ import { useGSAP } from "@gsap/react";
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/all";
 import Footer from "./footer";
+import { AnimatePresence, motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
@@ -493,7 +494,7 @@ export default function Home() {
           success of our initiatives&#8228; Together, we strive to create
           meaningful opportunities and impact within the developer community
         </p>
-        <div className="flex justify-between gap-4 max-w-5xld mx-auto flex-wrap">
+        <div className="grid grid-cols-5 gap-8 max-w-5xl d mx-auto flex-wrap">
           <div
             style={{ backgroundColor: "#0F0F0F" }}
             className="p-4 flex justify-center"
@@ -506,6 +507,10 @@ export default function Home() {
                 height={200}
                 style={{
                   maxWidth: "17.5vw",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  filter: "grayscale(1)"
                 }}
                 src="/partners/neardevhub.png"
               />
@@ -523,6 +528,10 @@ export default function Home() {
                 height={200}
                 style={{
                   maxWidth: "17.5vw",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  filter: "grayscale(1)"
                 }}
                 src="/partners/nearafrica.jpeg"
               />
@@ -540,6 +549,10 @@ export default function Home() {
                 height={200}
                 style={{
                   maxWidth: "17.5vw",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  filter: "grayscale(1)"
                 }}
                 src="/partners/coldscollective.jpeg"
               />
@@ -557,6 +570,10 @@ export default function Home() {
                 height={200}
                 style={{
                   maxWidth: "17.5vw",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  filter: "grayscale(1)"
                 }}
                 src="/partners/potlock.jpeg"
               />
@@ -574,6 +591,10 @@ export default function Home() {
                 height={200}
                 style={{
                   maxWidth: "17.5vw",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  filter: "grayscale(1)"
                 }}
                 src="/partners/welcomehomeintl.jpeg"
               />
@@ -583,7 +604,12 @@ export default function Home() {
       </section>
       <section className="bg-[rgba(150,150,150,0.05)] pt-14 px-12 lg:px-16 xl:px-24 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-20 font-light pb-20">
         <div className="flex flex-col justify-center">
-          <div className={ki.className + " font-medium text-2xl md:text-4xl lg:text-5xl xl:text-6xl mb-6"}>
+          <div
+            className={
+              ki.className +
+              " font-medium text-2xl md:text-4xl lg:text-5xl xl:text-6xl mb-6"
+            }
+          >
             Reviews
           </div>
           <p className="md:text-lg xl:text-xl">
@@ -610,30 +636,67 @@ const Carousel = () => {
 
     return () => clearTimeout(changeSlideTimeout);
   }, [currentSlide]);
-
+  const slides = [
+    {
+      name: "Kyle Samsons",
+      review: `My first encounter with WebFusion was during a workshop in the year 2023. I can say it was a life changing experience for a newbie in tech and others in attendance as well.`,
+    },
+    {
+      name: "Jenny Simpsons",
+      review: `My third encounter with WebFusion was during a workshop in the year 2023. I can say it was a life changing experience for a newbie in tech and others in attendance as well.`,
+    },
+  ];
   return (
     <>
       <div className="border border-[rgba(254,254,254,0.47)] px-7 py-8 relative">
-        <div className="flex justify-between mb-3 md:mb-5 lg:mb-7">
-          <span className="font-normal text-lg md:text-xl xl:text-2xl">Kyle Samsons</span>
-        </div>
-        <p className="lg:text-lg">
-          My first encounter with WebFusion was during a workshop in the year
-          2023&#8228; I can say it was a life changing experience for a newbie
-          in tech and others in attendance as well&#8228;
-        </p>
+        <AnimatePresence>
+          <div className="flex justify-between mb-3 md:mb-5 lg:mb-7">
+            <div className="flex">
+              {slides
+                .filter((_, idx) => idx === currentSlide)
+                .map(({ name, review }) => (
+                  <motion.span
+                    initial={{ x: 50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -50, opacity: 0 }}
+                    key={"span" + name + review}
+                    className="font-normal text-lg md:text-xl xl:text-2xl"
+                  >
+                    {name}
+                  </motion.span>
+                ))}
+            </div>
+          </div>
+          <section className="flex">
+            {slides
+              .filter((_, idx) => idx === currentSlide)
+              .map(({ name, review }) => (
+                <motion.p
+                  initial={{ x: 50, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: -50, opacity: 0 }}
+                  key={"p" + name + review}
+                  className="lg:text-lg"
+                >
+                  {review.replaceAll(".", String.fromCharCode(8228))}
+                </motion.p>
+              ))}
+          </section>
+        </AnimatePresence>
         <div className="controls absolute -bottom-6 in left-1/2 -translate-x-1/2 w-1/2 max-w-36 flex justify-center">
-          {Array(numOfSlides).fill(0).map((_, idx) => (
-            <span
-              key={idx}
-              onClick={() => setCurrentSlide(idx)}
-              className={`inline-block h-2 w-6 cursor-pointer rounded-full transition-colors duration-1000 ${
-                currentSlide === idx
-                  ? "bg-brand-green"
-                  : "bg-[rgba(82,82,82,0.67)]"
-              } mx-1`}
-            />
-          ))}
+          {Array(slides.length)
+            .fill(0)
+            .map((_, idx) => (
+              <span
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`inline-block h-2 w-6 cursor-pointer rounded-full transition-colors duration-1000 ${
+                  currentSlide === idx
+                    ? "bg-brand-green"
+                    : "bg-[rgba(82,82,82,0.67)]"
+                } mx-1`}
+              />
+            ))}
         </div>
       </div>
     </>

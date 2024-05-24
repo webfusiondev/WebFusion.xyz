@@ -2,6 +2,7 @@
   {
     "name": "Near DevHub",
     "description": "DevHub is NEAR Protocol's central hub for builders, offering tools, community, and support for projects. Get involved and stay connected!",
-    "markdown": "neardevhub.md"
+    "markdown": "neardevhub.md",
+    "tag": "Developer Courses"
   }
 ]

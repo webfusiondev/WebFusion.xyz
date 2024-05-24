@@ -248,9 +248,9 @@ export default function Home() {
               bring your creative ideas to life within a supportive
               environment&#8228;
             </p>
-            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer hidden">
+            <Link href="events?type=Hackathons" className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
               Read More
-            </span>
+            </Link>
           </div>
           <div className="event-card md:hover:text-brand-black col-span-6 md:col-span-3 xl:col-span-2 border border-secondary p-12 md:p-20 xl:p-24">
             <div
@@ -264,9 +264,9 @@ export default function Home() {
               Dive deep into specific topics or technologies through immersive
               learning experiences led by industry experts&#8228;
             </p>
-            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer hidden">
+            <Link href="events?type=Bootcamps" className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
               Read More
-            </span>
+            </Link>
           </div>
           <div className="event-card md:hover:text-brand-black col-span-6 md:col-span-3 xl:col-span-2 border border-secondary p-12 md:p-20 xl:p-24">
             <div
@@ -281,9 +281,9 @@ export default function Home() {
               covering a wide array of subjects relevant to modern development
               practices&#8228;
             </p>
-            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer hidden">
+            <Link href="events?type=Workshops" className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
               Read More
-            </span>
+            </Link>
           </div>
           <div className="event-card md:hover:text-brand-black col-span-6 md:col-span-3 border border-secondary p-12 md:p-20 xl:p-24">
             <div
@@ -298,9 +298,9 @@ export default function Home() {
               thought leaders, innovators, and pioneers in the tech
               industry&#8228;
             </p>
-            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer hidden">
+            <Link href="events?type=Webinars" className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
               Read More
-            </span>
+            </Link>
           </div>
           <div className="event-card md:hover:text-brand-black col-span-6 md:col-span-3 border border-secondary p-12 md:p-20 xl:p-24">
             <div
@@ -315,9 +315,9 @@ export default function Home() {
               where networking opportunities abound and camaraderie
               thrives&#8228;
             </p>
-            <span className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer hidden">
+            <Link href="events?attendance=IRL+Events" className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
               Read More
-            </span>
+            </Link>
           </div>
         </div>
       </section>
@@ -482,13 +482,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="px-12 lg:px-16 xl:px-24 mb-24">
+      <section className="px-12 lg:px-16 xl:px-24 mb-24 text-center">
         <div
           className={ki.className + " font-medium text-4xl xl:text-6xl mb-6"}
         >
           Partners &amp; <span className="text-brand-green">Sponsors</span>
         </div>
-        <p className="md:text-lg xl:text-xl font-light max-w-5xl mb-12">
+        <p className="md:text-lg xl:text-xl font-light max-w-5xl mb-12 mx-auto">
           We are grateful for the support and collaboration of our esteemed
           partners and sponsors, who share our vision and contribute to the
           success of our initiatives&#8228; Together, we strive to create

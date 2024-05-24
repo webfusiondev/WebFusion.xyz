@@ -3,8 +3,8 @@ import "./globals.css";
 import { widolte } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "Webfusion",
-  description: "Webfusion Website",
+  title: "WebFusion",
+  description: "WebFusion Website",
 };
 
 export default function RootLayout({

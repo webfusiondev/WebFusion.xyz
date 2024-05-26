@@ -6,6 +6,9 @@ import { Listbox, Tab, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import Head from "next/head";
 import { useQueryParamState } from "@/hooks";
+import moment from "moment";
+import Link from "next/link";
+
 // TODO: validators
 export default function Courses() {
   const allEvents: Array<{
@@ -13,7 +16,7 @@ export default function Courses() {
     events: {
       name: string;
       region: string;
-      date: string;
+      date: `${number}/${number}/${number}`;
       tag: string;
       attendance: string;
       link: string;
@@ -21,7 +24,16 @@ export default function Courses() {
   }> = [
     {
       name: "Upcoming Events",
-      events: [],
+      events: [
+        {
+          name: "Buidl for Africa Hackathon",
+          date: "07/01/2024",
+          region: "Nigeria",
+          tag: "Hackathons",
+          attendance: "Hybrid",
+          link: "#",
+        },
+      ],
     },
     {
       name: "Past Events",
@@ -136,11 +148,150 @@ export default function Courses() {
           <Tab.Panels>
             {filteredEvents.map(({ name, events }) => (
               <Tab.Panel key={name}>
-                {events.length === 0 ? (
-                  <>There&apos;re currently no {name}</>
-                ) : (
-                  events.map((event) => <>...</>)
-                )}
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+                  {events.length === 0 ? (
+                    <div className="col-span-3">
+                      There&apos;re currently no {name}
+                    </div>
+                  ) : (
+                    events.map((event) => (
+                      <div
+                        key={event.name + event.date + event.tag}
+                        className="px-6 py-5 bg-[rgba(150,_150,_150,_0.05)]"
+                      >
+                        <div className="font-bold text-lg md:text-xl xl:text-2xl mb-2">
+                          {event.name}
+                        </div>
+                        <div className="flex mb-2">
+                          <svg
+                            className="mr-3"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="22"
+                            height="24"
+                            viewBox="0 0 22 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M1.00129 9.36741L1 23.1323L14.6314 23.1297L21.559 17.9424C21.5556 17.9213 21.668 16.2434 21.668 16.2434L21.6667 9.35449L1.00129 9.36741Z"
+                              fill="white"
+                            />
+                            <path
+                              d="M1.08499 9.44055L21.6668 9.35443L21.6681 2.26318H17.5606L17.583 4.5335C18.3266 4.72984 18.5087 5.86263 18.5087 5.86263C18.4992 6.80641 17.3557 6.95193 17.3505 6.95064C16.5549 6.78789 16.2789 6.39867 16.2879 5.74423C16.2939 5.28439 16.3077 5.17159 16.6358 4.84953C16.8567 4.63339 16.9088 4.58775 17.2003 4.5137L17.1882 2.26361H5.45513L5.48527 4.5137C6.22927 4.71003 6.47253 4.88096 6.46522 5.68438C6.4566 6.62859 5.30013 7.0966 5.29453 7.0966C4.34516 7.08799 4.00631 6.65012 4.01535 5.70074C4.01966 5.24091 4.39295 4.89818 4.72146 4.57613C4.94148 4.35999 5.02199 4.22221 5.31348 4.14816L5.21015 2.26361H1.00146L1.08499 9.44055Z"
+                              fill="#EA5A47"
+                            />
+                            <path
+                              d="M21.6669 17.9424H14.4081C14.4081 17.9424 14.0215 20.5705 13.9905 20.3634V22.6992L14.6311 23.1297L21.6669 17.9424Z"
+                              fill="#D0CFCE"
+                            />
+                            <path
+                              d="M5.30778 7.09701C6.02115 7.09701 6.59945 6.51871 6.59945 5.80534C6.59945 5.09197 6.02115 4.51367 5.30778 4.51367C4.59441 4.51367 4.01611 5.09197 4.01611 5.80534C4.01611 6.51871 4.59441 7.09701 5.30778 7.09701Z"
+                              stroke="black"
+                              strokeWidth="0.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M7.03109 2.47853H15.6637M19.091 2.47853H21.6674V9.36742H1.00073V2.47853H3.59784M5.31275 1V5.43903"
+                              stroke="black"
+                              strokeWidth="0.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M17.3637 7.09627C18.0771 7.09627 18.6554 6.51797 18.6554 5.80461C18.6554 5.09124 18.0771 4.51294 17.3637 4.51294C16.6503 4.51294 16.072 5.09124 16.072 5.80461C16.072 6.51797 16.6503 7.09627 17.3637 7.09627Z"
+                              stroke="black"
+                              strokeWidth="0.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M17.3693 1V5.43903M10.6181 13.6601C10.7307 13.1136 11.0283 12.6228 11.4607 12.2703C11.8931 11.9178 12.4339 11.7253 12.9918 11.7251C13.6609 11.7251 14.2662 11.9964 14.7054 12.4351C15.3874 13.1171 15.3241 14.2508 14.6839 14.9724L10.5686 19.6138H12.6181M5.8562 13.3612L8.04041 11.7251V19.6133"
+                              stroke="black"
+                              strokeWidth="0.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M1 9.35449V23.1323L14.631 23.1297L21.6667 17.9424V9.35449"
+                              stroke="black"
+                              strokeWidth="0.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M21.5586 17.9424H14.408V20.3014"
+                              stroke="black"
+                              strokeWidth="0.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                          <span>
+                            {moment(event.date, "DD/MM/YYYY").format("LL")}
+                          </span>
+                        </div>
+                        <div className="flex mb-2">
+                          <svg
+                            className="mr-3"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink"
+                            version="1.0"
+                            id="Layer_1"
+                            width="800px"
+                            height="800px"
+                            viewBox="0 0 64 64"
+                            enableBackground="new 0 0 64 64"
+                            xmlSpace="preserve"
+                            style={{ height: "20px", width: "20px" }}
+                          >
+                            <g>
+                              <g>
+                                <path
+                                  fill="#394240"
+                                  d="M32,0C18.745,0,8,10.745,8,24c0,5.678,2.502,10.671,5.271,15l17.097,24.156C30.743,63.686,31.352,64,32,64    s1.257-0.314,1.632-0.844L50.729,39C53.375,35.438,56,29.678,56,24C56,10.745,45.255,0,32,0z M48.087,39h-0.01L32,61L15.923,39    h-0.01C13.469,35.469,10,29.799,10,24c0-12.15,9.85-22,22-22s22,9.85,22,22C54,29.799,50.281,35.781,48.087,39z"
+                                />
+                                <path
+                                  fill="#394240"
+                                  d="M32,14c-5.523,0-10,4.478-10,10s4.477,10,10,10s10-4.478,10-10S37.523,14,32,14z M32,32    c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.418,32,32,32z"
+                                />
+                                <path
+                                  fill="#394240"
+                                  d="M32,10c-7.732,0-14,6.268-14,14s6.268,14,14,14s14-6.268,14-14S39.732,10,32,10z M32,36    c-6.627,0-12-5.373-12-12s5.373-12,12-12s12,5.373,12,12S38.627,36,32,36z"
+                                />
+                              </g>
+                              <g>
+                                <path
+                                  fill="#F76D57"
+                                  d="M32,12c-6.627,0-12,5.373-12,12s5.373,12,12,12s12-5.373,12-12S38.627,12,32,12z M32,34    c-5.522,0-10-4.477-10-10s4.478-10,10-10s10,4.477,10,10S37.522,34,32,34z"
+                                />
+                                <path
+                                  fill="#F76D57"
+                                  d="M32,2c-12.15,0-22,9.85-22,22c0,5.799,3.469,11.469,5.913,15h0.01L32,61l16.077-22h0.01    C50.281,35.781,54,29.799,54,24C54,11.85,44.15,2,32,2z M32,38c-7.732,0-14-6.268-14-14s6.268-14,14-14s14,6.268,14,14    S39.732,38,32,38z"
+                                />
+                              </g>
+                              <path
+                                opacity="0.2"
+                                fill="#231F20"
+                                d="M32,12c-6.627,0-12,5.373-12,12s5.373,12,12,12s12-5.373,12-12S38.627,12,32,12z M32,34   c-5.522,0-10-4.477-10-10s4.478-10,10-10s10,4.477,10,10S37.522,34,32,34z"
+                              />
+                            </g>
+                          </svg>
+                          <span>{event.region} ({event.attendance})</span>
+                        </div>
+                        <div className="flex items-end">
+                          <span className="text-sm rounded-sm bg- border border-dashed px-1 text-left inline-block">
+                            {event.tag}
+                          </span>
+                          <Link className="inline-block ml-auto" href={event.link}>
+                            <button className=" bg-brand-green text-brand-black px-3 py-2 lg:text-lg">
+                              View More
+                            </button>
+                          </Link>
+                        </div>
+                      </div>
+                    ))
+                  )}
+                </div>
               </Tab.Panel>
             ))}
           </Tab.Panels>

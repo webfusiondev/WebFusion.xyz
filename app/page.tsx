@@ -34,6 +34,16 @@ export default function Home() {
     },
     { scope: container }
   );
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderImages = ["/webfusionhome.jpeg", "/eventsbg.jpeg"];
+  const slideDurationInSeconds = 3;
+  useEffect(() => {
+    const changeSlideInterval = setInterval(() => {
+      setCurrentSlide((currentSlide + 1) % sliderImages.length);
+    }, slideDurationInSeconds * 1000);
+
+    return () => clearInterval(changeSlideInterval);
+  });
   return (
     <div ref={container}>
       <main className="min-h-[80vh] md:min-h-screen flex flex-col relative overflow-x-clip">
@@ -67,13 +77,29 @@ export default function Home() {
           {/* right aligned section */}
           <div className="grid grid-cols-11 xl:pl-8">
             <div className="col-span-11 md:col-span-6 hidden md:flex mr-14 max- h-[263px] relative items-center">
-              <div className="h-full w-full heroimg overflow-hidden z-10">
-                <img
-                  className="grayscale hover:grayscale-0"
-                  style={{ objectFit: "cover", height: "100%", width: "100%" }}
-                  src="/webfusionhome.jpeg"
-                />
-              </div>
+              <AnimatePresence>
+                <div className="h-full w-full heroimg overflow-hidden z-10">
+                  {sliderImages.map((image, idx) =>
+                    idx == currentSlide ? (
+                      <motion.img
+                        initial={{ x: 100, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: -100, opacity: 0 }}
+                        key={idx}
+                        className="grayscale hover:grayscale-0"
+                        style={{
+                          objectFit: "cover",
+                          height: "100%",
+                          width: "100%",
+                        }}
+                        src={image}
+                      />
+                    ) : (
+                      <></>
+                    )
+                  )}
+                </div>
+              </AnimatePresence>
               <div className="absolute bottom-[-14px] right-[-14px] w-2/3 h-[85%] border-b border-r border-brand-green z-0"></div>
             </div>
             <div className="col-span-11 md:col-span-5 flex flex-col justify-center">
@@ -248,7 +274,10 @@ export default function Home() {
               bring your creative ideas to life within a supportive
               environment&#8228;
             </p>
-            <Link href="events?type=Hackathons" className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+            <Link
+              href="events?type=Hackathons"
+              className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer"
+            >
               Read More
             </Link>
           </div>
@@ -264,7 +293,10 @@ export default function Home() {
               Dive deep into specific topics or technologies through immersive
               learning experiences led by industry experts&#8228;
             </p>
-            <Link href="events?type=Bootcamps" className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+            <Link
+              href="events?type=Bootcamps"
+              className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer"
+            >
               Read More
             </Link>
           </div>
@@ -281,7 +313,10 @@ export default function Home() {
               covering a wide array of subjects relevant to modern development
               practices&#8228;
             </p>
-            <Link href="events?type=Workshops" className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+            <Link
+              href="events?type=Workshops"
+              className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer"
+            >
               Read More
             </Link>
           </div>
@@ -298,7 +333,10 @@ export default function Home() {
               thought leaders, innovators, and pioneers in the tech
               industry&#8228;
             </p>
-            <Link href="events?type=Webinars" className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+            <Link
+              href="events?type=Webinars"
+              className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer"
+            >
               Read More
             </Link>
           </div>
@@ -315,7 +353,10 @@ export default function Home() {
               where networking opportunities abound and camaraderie
               thrives&#8228;
             </p>
-            <Link href="events?attendance=IRL+Events" className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer">
+            <Link
+              href="events?attendance=IRL+Events"
+              className="md:text-lg xl:text-xl text-secondary pb-3 border-b border-b-brand-green cursor-pointer"
+            >
               Read More
             </Link>
           </div>
@@ -494,11 +535,8 @@ export default function Home() {
           success of our initiatives&#8228; Together, we strive to create
           meaningful opportunities and impact within the developer community
         </p>
-        <div className="grid grid-cols-5 gap-8 max-w-5xl d mx-auto flex-wrap">
-          <div
-            style={{ backgroundColor: "#0F0F0F" }}
-            className="p-4 flex justify-center"
-          >
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-xl d mx-auto flex-wrap">
+          <div style={{ backgroundColor: "#0F0F0F" }} className="p-2 flex justify-center">
             <Link href="https://twitter.com/NEARDevHub" target="_blank">
               <Image
                 className="select-none"
@@ -510,16 +548,13 @@ export default function Home() {
                   width: "100%",
                   height: "100%",
                   objectFit: "contain",
-                  filter: "grayscale(1)"
+                  filter: "grayscale(1)",
                 }}
                 src="/partners/neardevhub.png"
               />
             </Link>
           </div>
-          <div
-            style={{ backgroundColor: "#0F0F0F" }}
-            className="p-4 flex justify-center"
-          >
+          <div style={{ backgroundColor: "#0F0F0F" }} className="p-2 flex justify-center">
             <Link href="https://twitter.com/nearafrica_" target="_blank">
               <Image
                 className="select-none"
@@ -531,16 +566,13 @@ export default function Home() {
                   width: "100%",
                   height: "100%",
                   objectFit: "contain",
-                  filter: "grayscale(1)"
+                  filter: "grayscale(1)",
                 }}
                 src="/partners/nearafrica.jpeg"
               />
             </Link>
           </div>
-          <div
-            style={{ backgroundColor: "#0F0F0F" }}
-            className="p-4 flex justify-center"
-          >
+          <div style={{ backgroundColor: "#0F0F0F" }} className="p-2 flex justify-center">
             <Link href="https://twitter.com/COLDSCOLLECTIVE" target="_blank">
               <Image
                 className="select-none"
@@ -552,16 +584,13 @@ export default function Home() {
                   width: "100%",
                   height: "100%",
                   objectFit: "contain",
-                  filter: "grayscale(1)"
+                  filter: "grayscale(1)",
                 }}
                 src="/partners/coldscollective.jpeg"
               />
             </Link>
           </div>
-          <div
-            style={{ backgroundColor: "#0F0F0F" }}
-            className="p-4 flex justify-center"
-          >
+          <div style={{ backgroundColor: "#0F0F0F" }} className="p-2 flex justify-center">
             <Link href="https://twitter.com/potlock_" target="_blank">
               <Image
                 className="select-none"
@@ -573,16 +602,13 @@ export default function Home() {
                   width: "100%",
                   height: "100%",
                   objectFit: "contain",
-                  filter: "grayscale(1)"
+                  filter: "grayscale(1)",
                 }}
                 src="/partners/potlock.jpeg"
               />
             </Link>
           </div>
-          <div
-            style={{ backgroundColor: "#0F0F0F" }}
-            className="p-4 flex justify-center"
-          >
+          <div style={{ backgroundColor: "#0F0F0F" }} className="p-2 flex justify-center">
             <Link href="https://twitter.com/welcomehomeintl" target="_blank">
               <Image
                 className="select-none"
@@ -594,9 +620,33 @@ export default function Home() {
                   width: "100%",
                   height: "100%",
                   objectFit: "contain",
-                  filter: "grayscale(1)"
+                  filter: "grayscale(1)",
                 }}
                 src="/partners/welcomehomeintl.jpeg"
+              />
+            </Link>
+          </div>
+          <div
+            // col-span-2 md:col-span-3
+            className=" lg:col-span-5 flex justify-center"
+          >
+            <Link
+              href="https://near.social/hackbox.near/widget/home"
+              target="_blank"
+            >
+              <Image
+                className="select-none col-span-2"
+                alt="hackbox"
+                width={200}
+                height={200}
+                style={{
+                  maxWidth: "34vw",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  filter: "grayscale(1)",
+                }}
+                src="/partners/hackbox.png"
               />
             </Link>
           </div>

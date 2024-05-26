@@ -52,6 +52,7 @@ export default function Courses({
     { name: "Developer Courses" },
     { name: "Dev Docs" },
     { name: "Tooling" },
+    { name: "Developer Communities" },
   ];
   const [selectedFilter, setSelectedFilter] = useQueryParamState({
     filters,

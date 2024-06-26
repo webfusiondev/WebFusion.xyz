@@ -1,0 +1,20 @@
+[
+    {
+      "name": "Upcoming Events",
+      "events": [
+        {
+          "name": "Web3 Meetup, Dakar - By Avalanche",
+          "date": "26/06/2024",
+          "time": "4:00 PM - 6:00 PM",
+          "region": "Senegal",
+          "tag": "Conferences",
+          "attendance": "IRL Events",
+          "link": "https://lu.ma/ni6murhw"
+        }
+      ]
+    },
+    {
+      "name": "Past Events",
+      "events": []
+    }
+  ]

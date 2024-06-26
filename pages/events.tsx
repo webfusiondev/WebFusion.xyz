@@ -162,11 +162,12 @@ export default function Events({
                     events.map((event) => (
                       <div
                         key={event.name + event.date + event.tag + event.time}
-                        className="px-6 py-5 bg-[rgba(150,_150,_150,_0.05)]"
+                        className="px-6 py-5 bg-[rgba(150,_150,_150,_0.05)] flex flex-col justify-between"
                       >
                         <div className="font-bold text-lg md:text-xl xl:text-2xl mb-2">
                           {event.name}
                         </div>
+                        <div>
                         <div className="flex mb-2">
                           <svg
                             className="mr-3"
@@ -313,6 +314,7 @@ export default function Events({
                           <span>
                             {event.region} ({event.attendance})
                           </span>
+                        </div>
                         </div>
                         <div className="flex items-end">
                           <span className="text-sm rounded-sm bg- border border-dashed px-1 text-left inline-block">

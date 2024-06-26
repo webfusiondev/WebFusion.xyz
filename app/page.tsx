@@ -470,15 +470,16 @@ export default function Home() {
               src="/team/kylewalker.png"
             />
             <div className="font-bold text-lg md:text-xl xl:text-2xl">
-              Kyle Walker
+              Sharufa Rashied-Walker
             </div>
             <div className="mb-8 text-lg md:text-xl xl:text-2xl">
-              Project Manager
+              Lead Marketer
             </div>
             <p className="md:text-lg">
-              Meet Kyle, a seasoned project manager with a knack for
-              orchestrating success&#8228; Precision, strategy, and teamwork
-              define his approach to excellence&#8228;
+              Sharufa, a dynamic entrepreneur, reshapes industries and empowers
+              communities&#8228; She revolutionized African women&apos;s wear with
+              Jinaki and champions property ownership through blockchain at
+              Welcome Home International Realty Group&#8228;
             </p>
           </div>
           <div style={{ backgroundColor: "#0F0F0F" }} className="p-8">
@@ -490,15 +491,16 @@ export default function Home() {
               src="/team/sarahcook.png"
             />
             <div className="font-bold text-lg md:text-xl xl:text-2xl">
-              Sarah Cook
+              Peace Paul
             </div>
             <div className="mb-8 text-lg md:text-xl xl:text-2xl">
-              Frontend Developer
+              Community Manager/Social Media Manager
             </div>
             <p className="md:text-lg">
-              Sarah, a dynamic frontend developer, crafts digital experiences
-              that captivate and innovate&#8228; Her code is the canvas for
-              user-centric masterpieces&#8228;
+              Peace, an expert community manager, creates vibrant online spaces
+              for Webfusion users&#8228; Her social media strategies foster
+              connection and engagement, ensuring a seamless user
+              experience&#8228;
             </p>
           </div>
           <div style={{ backgroundColor: "#0F0F0F" }} className="p-8">
@@ -510,15 +512,37 @@ export default function Home() {
               src="/team/jamesdinero.png"
             />
             <div className="font-bold text-lg md:text-xl xl:text-2xl">
-              James Dinero
+              Earnest Etim
             </div>
             <div className="mb-8 text-lg md:text-xl xl:text-2xl">
-              Community Manager
+              Community Lead
             </div>
             <p className="md:text-lg">
-              James, the community manager extraordinaire, cultivates vibrant
-              online spaces where connections thrive&#8228; Engagement, empathy,
-              and enthusiasm are his guiding principles&#8228;
+              Earnest, an experienced open web activist, excels at building
+              communities&#8228; As a community builder at NEAR Africa, he
+              fosters connections and drives engagement in the digital
+              space&#8228;
+            </p>
+          </div>
+          <div style={{ backgroundColor: "#0F0F0F" }} className="p-8">
+            <Image
+              alt="james dinero"
+              width={150}
+              height={150}
+              className="mb-8 mx-auto"
+              src="/team/jamesdinero.png"
+            />
+            <div className="font-bold text-lg md:text-xl xl:text-2xl">
+              Victor Kanu
+            </div>
+            <div className="mb-8 text-lg md:text-xl xl:text-2xl">
+              Developer Relations
+            </div>
+            <p className="md:text-lg">
+              Victor, a seasoned Developer Relations expert, bridges the gap
+              between technology and developers&#8228; As part of the core
+              DevRel team at NEAR DevHub and Head DevRel at Bagel AI, he drives
+              innovation and engagement in the developer community&#8228;
             </p>
           </div>
         </div>
@@ -536,7 +560,10 @@ export default function Home() {
           meaningful opportunities and impact within the developer community
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-xl d mx-auto flex-wrap">
-          <div style={{ backgroundColor: "#0F0F0F" }} className="p-2 flex justify-center">
+          <div
+            style={{ backgroundColor: "#0F0F0F" }}
+            className="p-2 flex justify-center"
+          >
             <Link href="https://twitter.com/NEARDevHub" target="_blank">
               <Image
                 className="select-none"
@@ -554,7 +581,10 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div style={{ backgroundColor: "#0F0F0F" }} className="p-2 flex justify-center">
+          <div
+            style={{ backgroundColor: "#0F0F0F" }}
+            className="p-2 flex justify-center"
+          >
             <Link href="https://twitter.com/nearafrica_" target="_blank">
               <Image
                 className="select-none"
@@ -572,7 +602,10 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div style={{ backgroundColor: "#0F0F0F" }} className="p-2 flex justify-center">
+          <div
+            style={{ backgroundColor: "#0F0F0F" }}
+            className="p-2 flex justify-center"
+          >
             <Link href="https://twitter.com/COLDSCOLLECTIVE" target="_blank">
               <Image
                 className="select-none"
@@ -590,7 +623,10 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div style={{ backgroundColor: "#0F0F0F" }} className="p-2 flex justify-center">
+          <div
+            style={{ backgroundColor: "#0F0F0F" }}
+            className="p-2 flex justify-center"
+          >
             <Link href="https://twitter.com/potlock_" target="_blank">
               <Image
                 className="select-none"
@@ -608,7 +644,10 @@ export default function Home() {
               />
             </Link>
           </div>
-          <div style={{ backgroundColor: "#0F0F0F" }} className="p-2 flex justify-center">
+          <div
+            style={{ backgroundColor: "#0F0F0F" }}
+            className="p-2 flex justify-center"
+          >
             <Link href="https://twitter.com/welcomehomeintl" target="_blank">
               <Image
                 className="select-none"

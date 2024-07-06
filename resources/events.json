@@ -3,15 +3,6 @@
       "name": "Upcoming Events",
       "events": [
         {
-          "name": "Web3 Meetup, Dakar - By Avalanche",
-          "date": "26/06/2024",
-          "time": "4:00 PM - 6:00 PM",
-          "region": "Senegal",
-          "tag": "Conferences",
-          "attendance": "IRL Events",
-          "link": "https://lu.ma/ni6murhw"
-        },
-        {
           "name": "BloqFest 24",
           "date": "13/07/2024",
           "time": "10:00 AM - 2:30 PM",
@@ -24,6 +15,16 @@
     },
     {
       "name": "Past Events",
-      "events": []
+      "events": [
+        {
+          "name": "Web3 Meetup, Dakar - By Avalanche",
+          "date": "26/06/2024",
+          "time": "4:00 PM - 6:00 PM",
+          "region": "Senegal",
+          "tag": "Conferences",
+          "attendance": "IRL Events",
+          "link": "https://x.com/webfusiondev/status/1808077506899050655"
+        }
+      ]
     }
   ]

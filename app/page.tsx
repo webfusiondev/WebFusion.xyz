@@ -571,7 +571,27 @@ export default function Home() {
           success of our initiatives&#8228; Together, we strive to create
           meaningful opportunities and impact within the developer community
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-xl d mx-auto flex-wrap">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-xl d mx-auto flex-wrap">
+          <div
+            style={{ backgroundColor: "#0F0F0F" }}
+            className="p-2 flex justify-center"
+          >
+            <Link href="https://near.org/" target="_blank">
+              <Image
+                className="select-none invert"
+                alt="near protocol"
+                width={200}
+                height={200}
+                style={{
+                  maxWidth: "17.5vw",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                }}
+                src="/partners/nearprotocol.png"
+              />
+            </Link>
+          </div>
           <div
             style={{ backgroundColor: "#0F0F0F" }}
             className="p-2 flex justify-center"
@@ -678,8 +698,31 @@ export default function Home() {
             </Link>
           </div>
           <div
+            className=" lg:col-span-3 flex justify-center"
+          >
+            <Link
+              href="https://t.me/BloquestNexus"
+              target="_blank"
+            >
+              <Image
+                className="select-none col-span-2"
+                alt="hackbox"
+                width={200}
+                height={200}
+                style={{
+                  maxWidth: "34vw",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  filter: "grayscale(1)",
+                }}
+                src="/partners/bloquest.png"
+              />
+            </Link>
+          </div>
+          <div
             // col-span-2 md:col-span-3
-            className=" lg:col-span-5 flex justify-center"
+            className=" lg:col-span-3 flex justify-center"
           >
             <Link
               href="https://near.social/hackbox.near/widget/home"

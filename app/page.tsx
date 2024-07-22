@@ -202,31 +202,35 @@ export default function Home() {
         style={{ backgroundColor: "rgba(0, 236, 151, 0.05)" }}
         className="grid grid-cols-6 gap-4 px-12 lg:px-16 xl:px-24 py-24 text-center"
       >
-        <span className="col-span-6 lg:col-span-1" />
+        {/* <span className="col-span-6 lg:col-span-1" /> */}
         <div
           className={
             ki.className +
-            " flex flex-col justify-center font-medium text-4xl mr-4 lg:text-right col-span-6 lg:col-span-1 text-center"
+            " flex flex-col justify-center font-medium text-4xl mr-4 lg:text-right col-span-6 lg:col-span-2 text-center"
           }
         >
-          <div className="mb-2">Our numbers</div>
+          <div className="mb-2 break-words ">Our achievements</div>
           <div>
             since <span className="text-brand-green">2023</span>
           </div>
         </div>
         <div className="flex flex-col justify-center col-span-3 lg:col-span-1">
+          <div className="text-lg font-light mb-2">Reached</div>
           <div className="text-6xl mb-2 countup">2</div>
           <div className="text-xl">Countries</div>
         </div>
         <div className="flex flex-col justify-center col-span-3 lg:col-span-1">
+          <div className="text-lg font-light mb-2">Hosted</div>
           <div className="text-6xl mb-2 countup">2</div>
           <div className="text-xl">Hackathons</div>
         </div>
         <div className="flex flex-col justify-center col-span-3 lg:col-span-1">
+          <div className="text-lg font-light mb-2">Hosted</div>
           <div className="text-6xl mb-2 countup">4</div>
           <div className="text-xl">Workshops</div>
         </div>
         <div className="flex flex-col justify-center col-span-3 lg:col-span-1">
+          <div className="text-lg font-light mb-2">Supported</div>
           <div className="text-6xl mb-2 countup">40</div>
           <div className="text-xl">Developers</div>
         </div>
@@ -462,13 +466,15 @@ export default function Home() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 font-light">
           <div style={{ backgroundColor: "#0F0F0F" }} className="p-8">
-            <Image
-              alt="kyle walker"
-              width={150}
-              height={150}
-              className="mb-8 mx-auto"
-              src="/team/kylewalker.png"
-            />
+            <div className="rounded-full h-[150px] w-[150px] overflow-hidden mx-auto">
+              <Image
+                alt="Sharufa Rashied-Walker"
+                width={150}
+                height={150}
+                className="mb-8 mx-auto"
+                src="/team/sharufa.png"
+              />
+            </div>
             <div className="font-bold text-lg md:text-xl xl:text-2xl">
               Sharufa Rashied-Walker
             </div>
@@ -477,19 +483,21 @@ export default function Home() {
             </div>
             <p className="md:text-lg">
               Sharufa, a dynamic entrepreneur, reshapes industries and empowers
-              communities&#8228; She revolutionized African women&apos;s wear with
-              Jinaki and champions property ownership through blockchain at
+              communities&#8228; She revolutionized African women&apos;s wear
+              with Jinaki and champions property ownership through blockchain at
               Welcome Home International Realty Group&#8228;
             </p>
           </div>
           <div style={{ backgroundColor: "#0F0F0F" }} className="p-8">
-            <Image
-              alt="sarah cook"
-              width={150}
-              height={150}
-              className="mb-8 mx-auto"
-              src="/team/sarahcook.png"
-            />
+            <div className="rounded-full h-[150px] w-[150px] overflow-hidden mx-auto">
+              <Image
+                alt="peace"
+                width={150}
+                height={150}
+                className="mb-8"
+                src="/team/peace.png"
+              />
+            </div>
             <div className="font-bold text-lg md:text-xl xl:text-2xl">
               Peace Paul
             </div>
@@ -504,13 +512,15 @@ export default function Home() {
             </p>
           </div>
           <div style={{ backgroundColor: "#0F0F0F" }} className="p-8">
-            <Image
-              alt="james dinero"
-              width={150}
-              height={150}
-              className="mb-8 mx-auto"
-              src="/team/jamesdinero.png"
-            />
+            <div className="rounded-full h-[150px] w-[150px] overflow-hidden mx-auto">
+              <Image
+                alt="earnest etim"
+                width={150}
+                height={150}
+                className="mb-8"
+                src="/team/earnest.jpeg"
+              />
+            </div>
             <div className="font-bold text-lg md:text-xl xl:text-2xl">
               Earnest Etim
             </div>
@@ -525,13 +535,15 @@ export default function Home() {
             </p>
           </div>
           <div style={{ backgroundColor: "#0F0F0F" }} className="p-8">
-            <Image
-              alt="james dinero"
-              width={150}
-              height={150}
-              className="mb-8 mx-auto"
-              src="/team/jamesdinero.png"
-            />
+            <div className="rounded-full h-[150px] w-[150px] overflow-hidden mx-auto">
+              <Image
+                alt="victor kanu"
+                width={150}
+                height={150}
+                className="mb-8"
+                src="/team/victor.png"
+              />
+            </div>
             <div className="font-bold text-lg md:text-xl xl:text-2xl">
               Victor Kanu
             </div>

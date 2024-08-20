@@ -1,47 +1,48 @@
 [
-    {
-      "name": "Upcoming Events",
-      "events": [
-        {
-          "name": "BloqFest 24",
-          "date": "13/07/2024",
-          "time": "10:00 AM - 2:30 PM",
-          "region": "Nigeria",
-          "tag": "Conferences",
-          "attendance": "IRL Events",
-          "link": "https://lu.ma/kbzouckj?tk=X9twa4"
-        }
-      ]
-    },
-    {
-      "name": "Past Events",
-      "events": [
-        {
-          "name": "Web3 Meetup, Dakar - By Avalanche",
-          "date": "26/06/2024",
-          "time": "4:00 PM - 6:00 PM",
-          "region": "Senegal",
-          "tag": "Conferences",
-          "attendance": "IRL Events",
-          "link": "https://x.com/webfusiondev/status/1808077506899050655"
-       },
-        {
-          "name": "WebFusion Lagos Hackathon 2023",
-          "date": "27/11/2023 - 30/11/2023",
-          "time": "9:00 AM - 6:00 PM",
-          "region": "Nigeria",
-          "tag": "Hackathons",
-          "attendance": "Hybrid",
-          "link": "https://x.com/NEARDevHub/status/1730642113098879469"
-       },
-        {
-          "name": "Build On BOS Accra",
-          "date": "08/09/2023",
-          "time": "10:00 AM",
-          "region": "Ghana",
-          "tag": "Workshops",
-          "attendance": "IRL Events",
-          "link": "https://x.com/ETHAccra/status/1700104874644357506"
-    }
-  ]
-}
+  {
+    "name": "Upcoming Events",
+    "events": [
+      {
+        "name": "BloqFest 24",
+        "date": "13/07/2024",
+        "time": "10:00 AM - 2:30 PM",
+        "region": "Nigeria",
+        "tag": "Conferences",
+        "attendance": "IRL Events",
+        "link": "https://lu.ma/kbzouckj?tk=X9twa4"
+      }
+    ]
+  },
+  {
+    "name": "Past Events",
+    "events": [
+      {
+        "name": "Web3 Meetup, Dakar - By Avalanche",
+        "date": "26/06/2024",
+        "time": "4:00 PM - 6:00 PM",
+        "region": "Senegal",
+        "tag": "Conferences",
+        "attendance": "IRL Events",
+        "link": "https://x.com/webfusiondev/status/1808077506899050655"
+      },
+      {
+        "name": "WebFusion Lagos Hackathon 2023",
+        "date": "27/11/2023 - 30/11/2023",
+        "time": "9:00 AM - 6:00 PM",
+        "region": "Nigeria",
+        "tag": "Hackathons",
+        "attendance": "Hybrid",
+        "link": "https://x.com/NEARDevHub/status/1730642113098879469"
+      },
+      {
+        "name": "Build On BOS Accra",
+        "date": "08/09/2023",
+        "time": "10:00 AM",
+        "region": "Ghana",
+        "tag": "Workshops",
+        "attendance": "IRL Events",
+        "link": "https://x.com/ETHAccra/status/1700104874644357506"
+      }
+    ]
+  }
+]

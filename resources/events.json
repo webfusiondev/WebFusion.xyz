@@ -30,10 +30,18 @@
           "date": "27/11/2023 - 30/11/2023",
           "time": "9:00 AM - 6:00 PM",
           "region": "Nigeria",
-          "tag": "Hackathon",
+          "tag": "Hackathons",
           "attendance": "Hybrid",
-          "link": "https://x.com/nearafrica_/status/1749442585054077414"
-        }
+          "link": "https://x.com/NEARDevHub/status/1730642113098879469"
+       },
+        {
+          "name": "Build On BOS Accra",
+          "date": "08/09/2023",
+          "time": "10:00 AM",
+          "region": "Ghana",
+          "tag": "Workshops",
+          "attendance": "IRL Events",
+          "link": "https://x.com/ETHAccra/status/1700104874644357506"
       ]
     }
   ]

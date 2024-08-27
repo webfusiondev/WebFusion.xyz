@@ -3,19 +3,28 @@
     "name": "Upcoming Events",
     "events": [
       {
-        "name": "BloqFest 24",
-        "date": "13/07/2024",
-        "time": "10:00 AM - 2:30 PM",
-        "region": "Nigeria",
-        "tag": "Conferences",
+        "name": "Meta Pool Workshop, Accra",
+        "date": "29/08/2024",
+        "time": "3:15 PM - 3:45 PM",
+        "region": "Ghana",
+        "tag": "Workshops",
         "attendance": "IRL Events",
-        "link": "https://lu.ma/kbzouckj?tk=X9twa4"
+        "link": "https://lu.ma/24f1b457"
       }
     ]
   },
   {
     "name": "Past Events",
     "events": [
+        {
+        "name": "BloqFest 24",
+        "date": "13/07/2024",
+        "time": "10:00 AM - 2:30 PM",
+        "region": "Nigeria",
+        "tag": "Conferences",
+        "attendance": "IRL Events",
+        "link": "https://twitter.com/joinbloquest"
+      },
       {
         "name": "Web3 Meetup, Dakar - By Avalanche",
         "date": "26/06/2024",
